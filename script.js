@@ -19,9 +19,12 @@ function RenderFact(data)
     var iconElement = document.getElementById("icon");
     var textElement = document.getElementById("text");
 
-    dateElement.innerText = `${data.created_at}`;
-    iconElement.innerHTML = `<img src = ${data.icon_url} <\/img>`
+    var date = `${data.created_at}`.substring(0,19);
+
+    dateElement.innerText = date;
+    iconElement.setAttribute('src', `${data.icon_url}`);
     textElement.innerText = `${data.value}`;
+    textElement.setAttribute('style', "border: 1px solid black");
 
 
 }
